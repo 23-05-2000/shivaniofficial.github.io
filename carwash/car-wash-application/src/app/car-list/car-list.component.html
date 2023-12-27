@@ -1,0 +1,49 @@
+<!--<div>
+    <h2>Car Details</h2>
+
+    <div *ngIf="cars">
+
+        <p><strong>Number:</strong> {{ cars.number }}</p>
+        <p><strong>Color:</strong> {{ cars.color }}</p>
+        <p><strong>Model:</strong> {{ cars.model }}</p>
+
+        <!-- You can add more details about the car based on your requirements 
+
+       <!-- <button (click)="editCar()">Edit Car Details</button>
+    </div>
+
+    <div *ngIf="!cars || cars.length == 0" >
+        <p>No car details available.</p>
+    </div>
+</div>-->
+<br>
+<button (click) = "getCarsByDesc()" class="btn btn-secondary">Descending order</button>
+
+<!--<button (click) = "create car-list()" class="btn btn-secondary" style="margin-left: 10px;">Add Appointments</button>-->
+<a routerLink="/create-car"  class="btn btn-secondary">Add Cars</a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Car ID</th>
+            <th>car number</th>
+            <th>car model</th>
+            <th>car color</th>
+            <th>Customer Id</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor = "let car of cars" >
+        <td>{{ car.carId }}</td>
+        <td>{{ car.number }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.color}}</td>
+        <td>{{car.customer.custId}}</td>
+
+           <button (click)="updateCar(car.carId )" class="btn btn-primary">Update</button>
+            <button (click)="deleteCar(car.carId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+    </tr>
+</tbody>
+</table>

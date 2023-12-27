@@ -1,0 +1,64 @@
+<br>
+<button (click) = "getInvoicesByDesc()" class="btn btn-secondary">Descending order</button>
+
+<!--<button (click) = "create create-customer()" class="btn btn-secondary" style="margin-left: 10px;">Add Appointments</button>-->
+<a routerLink="/create-invoice"  class="btn btn-secondary">Add Invoices</a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>InvoiceID</th>
+            <th>Date Issued</th>
+            <th>Payment Id</th>
+            <th>Total Amount:</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor = "let invoice of invoices" >
+        <td>{{ invoice.invoiceId }}</td>
+        <td>{{ invoice.dateIssued}}</td>
+        <td>{{ invoice.totalAmount }}</td>
+        <td>{{ invoice.paymentId}}</td>
+         
+           <button (click)="updateInvoice(invoice.invoiceId )" class="btn btn-primary">Update</button>
+            <button (click)="deleteInvoice(invoice.invoiceId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+    </tr>
+</tbody>
+</table>
+
+
+
+
+
+
+<!--<div class="col-md-6 offset-md-3">
+    <h2>Invoice Details</h2>
+    <div *ngIf="invoices">
+        <h3><strong>Invoices</strong>{{ invoices.invoiceId }}</h3>
+
+        <p><strong>Date:</strong>{{ invoices.dateIssued | date:'short' }}</p>
+
+      <!-- <div *ngIf="invoice../ && invoice.services.length > 0">
+            <h4>Services:</h4>
+            <ul>
+                <li *ngFor="let service of invoice.services">{{ service.name }} - ${{ service.amount }}</li>
+            </ul>
+        </div>
+
+        <p><strong>Payment Id:</strong>{{ invoices.paymentId }}</p>
+
+        <p><strong>Total Amount:</strong>{{ invoices.totalAmount }}</p>
+
+        
+
+        <!-- You can add more details about the invoice based on your requirements 
+
+<!--<button (click)="printInvoice()">Print Invoice</button> --> 
+   <!--</div>
+
+    <div *ngIf="!invoices">
+        <p>No invoice details available.</p>
+    </div>
+</div> -->

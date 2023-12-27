@@ -1,0 +1,17 @@
+<!-- src/app/car-wash/car-wash.component.html -->
+
+<div>
+    <h2>Car Wash Services</h2>
+
+    <div *ngIf="carWashServices.length > 0; else noServices">
+        <ul>
+            <li *ngFor="let service of carWashServices">
+                {{ service.name }} - {{ service.price | currency:'USD':'symbol':'1.2-2' }}
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #noServices>
+        <p>No car wash services available.</p>
+    </ng-template>
+</div>

@@ -1,0 +1,66 @@
+<br>
+<button (click) = "getCustomersByDesc()" class="btn btn-secondary">Descending order</button>
+
+<!--<button (click) = "create create-customer()" class="btn btn-secondary" style="margin-left: 10px;">Add Appointments</button>-->
+<a routerLink="/create-customer"  class="btn btn-secondary">Add Customers</a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>EmailId:</th>
+            <th>Address</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor = "let customer of customers" >
+        <td>{{ customer.custId }}</td>
+        <td>{{ customer.name}}</td>
+        <td>{{ customer.mobileNo }}</td>
+        <td>{{ customer.emailId}}</td>
+        <td>{{ customer.address}}</td>
+         
+           <button (click)="updateCustomer(customer.custId )" class="btn btn-primary color:dark">Update</button>
+            <button (click)="deleteCustomer(customer.custId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+    </tr>
+</tbody>
+</table>
+
+<!--<div>
+    <h2>Customer List</h2>
+    <div *ngIf="customers && customers.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <!-- Add more columns based on your requirements 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers">
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.address }}</td>
+                    <!-- Add more columns based on your requirements 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="!customers || customers.length === 0">
+        <p>No customers available.</p>
+    </div>
+</div>-->
+
+
+

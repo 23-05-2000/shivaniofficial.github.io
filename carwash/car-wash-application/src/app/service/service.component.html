@@ -1,0 +1,20 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<h2>Services Available</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Id</th>
+                <th>Service Name</th>
+                <th>Service Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let service of services;">
+                <td>{{service.serviceId}}</td>
+                <td>{{service.name}}</td>
+                <td>{{service.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

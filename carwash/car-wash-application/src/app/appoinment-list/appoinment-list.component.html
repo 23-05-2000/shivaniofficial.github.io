@@ -1,0 +1,51 @@
+<!--
+    <div> 
+    <h2>Appointment Details</h2>
+        <p><strong>Appoinment Id:</strong> {{ appoinments.appoinmentId }}</p>
+        <p><strong>Date:</strong> {{ appoinments.date | date:'medium' }}</p>
+        <p><strong>Time:</strong> {{ appoinments.time  }}</p>
+        <!--<p><strong>Car:</strong> {{ appoinments.carModel }}</p>
+        <p><strong>Status:</strong> {{ appoinments.status }}</p>
+
+        <!-- You can add more details about the appointment based on your requirements -
+
+        <button (click)="deleteAppoinment(appoinments.appointmentId)">Cancel Appointment</button>
+  
+
+    <div *ngIf="!appoinments">
+        <p>No appointment details available.</p>
+    </div>
+</div>-->
+<br><br>
+<button (click)="getAppoinmentsByDesc()" class="btn btn-secondary">Descending order</button>
+
+<!--<button (click) = "createAppoinments()" class="btn btn-secondary" style="margin-left: 10px;">Add Appointments</button>-->
+<a routerLink="/create-appoinment" class="btn btn-secondary">Add Appoinments</a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!-- <th>ID</th> -->
+            <th>Appoinment Id</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Customer Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appoinment of appoinments">
+            <!-- <td>{{ appoinment.id }}</td> -->
+            <td>{{ appoinment.appointmentId }}</td>
+            <td>{{ appoinment.status }}</td>
+            <td>{{ appoinment.date }}</td>
+            <td>{{ appoinment.time }}</td>
+            <td>{{appoinment.customer.custId}}</td>
+
+            <button (click)="updateAppoinment(appoinment.appointmentId)" class="btn btn-primary">Update</button>
+            <button (click)="deleteAppoinment(appoinment.appointmentId)" class="btn btn-danger"
+                style="margin-left: 10px;">Delete</button>
+        </tr>
+    </tbody>
+</table>
